@@ -37,7 +37,7 @@ jobs:
           cache: 'npm'
 
       - name: Debug files
-	run: ls -la
+        run: ls -la
       - name: Install dependencies
         run: npm ci
       - name: Build
