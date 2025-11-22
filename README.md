@@ -4,7 +4,8 @@ My cybersech/tech portfolio is located at:\
 https://mich-fi.github.io/ \
 
 The date of starting my portfolio is 22.11.2025.\
-I will be updating my portfolio throughout the years so I hope you will check this out later too (⸝⸝> ᴗ•⸝⸝) <3
+I will be updating my portfolio throughout the years so I hope you will check this out later too (⸝⸝> ᴗ•⸝⸝) <3\
+₊‧꒰ა ☆ ໒꒱ ‧₊°‧🫧⋆.ೃ࿔*:･
 
 ```
 . . ... . ... . ... . ... . ... . ... . ... . ... . ... . ... . ... . ... 
