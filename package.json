@@ -9,10 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "npm:rolldown-vite@^7.2.5"
-  },
-  "overrides": {
-    "vite": "npm:rolldown-vite@7.2.5"
+    "vite": "^7.2.5"
   },
   "dependencies": {
     "animejs": "^4.2.2"
