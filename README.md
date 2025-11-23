@@ -37,3 +37,6 @@ I will be updating my portfolio throughout the years so I hope you will check th
 . . ... . ... . ... - -++ + ++# # ##+ + ++- - -## + +++ + +++ + +++ + --. 
 . . ... . ... . ..- - +## + +#+ # #++ - --+ # ##+ + +++ + +++ + +++ + +-- 
 ```
+## Website Development Journey
+
+23.11.2025
