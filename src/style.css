@@ -7,9 +7,18 @@
        url('fonts/fira/woff2/FiraSans-Regular.ttf') format('truetype');
 }
 
+:root {
+  --main-color: #b0f7ff;
+  --accent-color: #FFF;
+}
+
 html {
   padding-left: 3em;
   padding-right: 1em;
+}
+
+.pageheader {
+  font-size: 3em;
 }
 
 body {
@@ -17,26 +26,23 @@ body {
   font-family: 'Nimbus Mono PS', 'Courier New', monospace;
   text-align: center;
   background-color: rgb(25, 24, 24);
-  color: rgb(255, 235, 119);
+  color: var(--main-color);
 }
 
 .navbartop {
   margin: 1em;
   text-align: center;
+  font-size: larger;
 }
 
 .navbartop div a {
   display: inline-block;
   padding: 0 10px;
-  border-right: solid rgb(255, 235, 119);
-}
-
-.navbartop div a:last-child {
-  border-right: none;
 }
 
 .navbar {
   text-align: left;
+  font-size: x-large;
 }
 
 /*square animation in the home page*/
@@ -101,21 +107,23 @@ p {
 .text-xl {
   font-size: 1.4em;
   text-align: center;
+  margin-right: 1.4em;
 }
 
 .AItext {
   font-size: x-large;
   font-weight: 600;
   text-align: center;
+  margin-right: 1.4em;
 }
 
 a {
-  color: rgb(255, 235, 119);
+  color: var(--main-color);
   text-decoration: none;
 }
 
 a:hover {
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .animesvg {
@@ -134,24 +142,29 @@ a:hover {
 .devgif {
   float: left;
   margin-right: 1em;
-  height: 390px;
+  height: 490px;
   overflow: hidden;
-  border: 2px solid rgb(255, 235, 119);
+  border: 2px solid var(--main-color);
 }
 
 .devgif img {
-  height: 400px;
+  height: 500px;
   margin: -5px 0px 0px 0px; 
 }
 
 .devgifheart img {
-  margin-top: 1.8em;
   height: 240px;
-  border: 2px solid rgb(255, 235, 119);
+  border: 2px solid var(--main-color);
+}
+
+.devtable1 {
+  padding: 0;
 }
 
 .images {
-  border: 2px solid rgb(255, 235, 119);
+  margin-top: 1em;
+  margin-right: 50em;
+  border: 2px solid var(--main-color);
 }
 
 #navbarimg img {
