@@ -38,11 +38,11 @@ function animateGrid() {
     rotate: 360,
     loop: true,
     alternate: true,
-    delay: stagger(400, {
+    delay: stagger(100, {
       grid: [1,4],
       from: utils.random(27, 27)
     }),
-    duration: 500,
+    duration: 1500,
     onComplete: animateGrid
   });
 }
