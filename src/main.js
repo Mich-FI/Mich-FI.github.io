@@ -34,7 +34,7 @@ function animateGrid() {
       { to: '0 0 2rem 0 blue' },
       { to: '0 0 2rem 0 blue' }
     ],
-    x: 300,
+    x: 330,
     rotate: 360,
     loop: true,
     alternate: true,
@@ -42,7 +42,7 @@ function animateGrid() {
       grid: [1,4],
       from: utils.random(27, 27)
     }),
-    duration: 2000,
+    duration: 1700,
     onComplete: animateGrid
   });
 }
