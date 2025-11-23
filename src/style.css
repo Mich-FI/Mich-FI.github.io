@@ -8,7 +8,7 @@
 }
 
 :root {
-  --main-color: #b0f7ff;
+  --main-color: #49b6ff;
   --accent-color: #FFF;
 }
 
@@ -111,10 +111,12 @@ body {
   height: 40rem;
   background-color: rgb(65, 204, 255);
   border-radius: 0.6rem;
+  margin-left: 2em;
 }
 
 #two {
   float: right;
+  margin-right: 2em;
 }
 
 /* Cool slider wave for vintage stuff!
