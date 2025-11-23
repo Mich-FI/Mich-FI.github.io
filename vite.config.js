@@ -9,7 +9,7 @@ export default defineConfig({
         cybersec_projects: './subsites/cybersec_projects/index.html',
         minihtmlcssprojects: './subsites/minihtmlcssprojects/index.html',
         portfoliodev: './subsites/portfoliodev/index.html',
-        tech_projects: './subsites/techprojects/index.html',
+        tech_projects: './subsites/tech_projects/index.html',
       },
     },
   },
