@@ -38,7 +38,7 @@ function animateGrid() {
     rotate: 360,
     loop: true,
     alternate: true,
-    delay: stagger(100, {
+    delay: stagger(400, {
       grid: [1,4],
       from: utils.random(27, 27)
     }),

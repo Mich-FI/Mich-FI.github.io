@@ -1,6 +1,8 @@
+
+
 body {
   /*font-family: 'Nimbus Mono PS', 'Courier New', monospace;*/
-  font-family: "Elms Sans", sans-serif;
+  font-family: vintage-deco, sans-serif;;
   text-align: center;
   background-color: rgb(25, 24, 24);
   color: rgb(255, 235, 119);
@@ -27,6 +29,11 @@ body {
 
 .text-xl {
   font-size: 1.4em;
+}
+
+.AItext {
+  font-size: x-large;
+  font-weight: 600;
 }
 
 .navbar {
