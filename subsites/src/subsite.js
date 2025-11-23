@@ -1,5 +1,11 @@
 import { animate, createTimeline, utils, svg, splitText, stagger } from 'animejs';
 
+animate('.pageheader', {
+  delay: 400,
+  opacity: [0,1],
+  duration: 2500,
+})
+
 //heart animation on cybersecurity projects page
 const $heart = utils.$('.square2');
 
@@ -25,3 +31,18 @@ function animateHeartGrid() {
 }
 
 animateHeartGrid();
+
+animate('.stick', {
+    boxShadow: [
+      { to: '0 0 6rem 0.5em blue' },
+      { to: '0 0 6rem 0 blue' }
+    ],
+    opacity: [
+        { to: [0.6, 1] },
+        { to: [0.4, 0.4] }
+    ],
+    delay: 800,
+    loop: true,
+    alternate: true,
+    duration: 5000,
+})

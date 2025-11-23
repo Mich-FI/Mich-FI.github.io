@@ -1,15 +1,21 @@
 import { animate, createTimeline, utils, svg, splitText, stagger } from 'animejs';
 
 //header animation
-animate('.pageheader', {
+animate('.mainheader', {
   delay: 700,
   opacity: [0,1],
-  duration: 3500,
+  duration: 4000,
+})
+
+animate('.pageheader', {
+  delay: 400,
+  opacity: [0,1],
+  duration: 2500,
 })
 
 // paragraph animation
-const[$p] = utils.$('p');
-const split = splitText('p', {
+const[$p] = utils.$('.text-xl');
+const split = splitText('.text-xl', {
   words:  { wrap: 'clip' },
 });
 
@@ -20,6 +26,24 @@ split.addEffect((self) => animate(self.words, {
   delay: stagger(100),
 }))
 
+//rectangle animation, cool for vintage stuff!
+/*animate('.rectangle', {
+  y: [
+    { to: [0, 8] },
+    { to: 0 }
+  ],
+  boxShadow: '0 0.2em 0.6rem 0 purple',
+  scaleY: [
+    { to: [0.2, 0.8] },
+    { to: 0.2 }
+  ],
+  loop: true,
+  delay: stagger(10, {
+    grid: [28,1],
+    from: utils.random(0,0)
+  }),
+  duration: 365,
+})*/
 
 //squares animation
 const $squares = utils.$('.square');
