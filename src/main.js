@@ -13,13 +13,13 @@ const split = splitText('p', {
   words:  { wrap: 'clip' },
 });
 
-
 split.addEffect((self) => animate(self.words, {
   y: ['100%', '0%'],
   duration: 1250,
   ease: 'out(3)',
   delay: stagger(100),
 }))
+
 
 //squares animation
 const $squares = utils.$('.square');
@@ -34,7 +34,7 @@ function animateGrid() {
       { to: '0 0 2rem 0 blue' },
       { to: '0 0 2rem 0 blue' }
     ],
-    x: 330,
+    y: 330,
     rotate: 360,
     loop: true,
     alternate: true,
