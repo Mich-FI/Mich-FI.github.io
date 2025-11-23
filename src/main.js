@@ -42,7 +42,7 @@ function animateGrid() {
       grid: [1,4],
       from: utils.random(27, 27)
     }),
-    duration: 3000,
+    duration: 2000,
     onComplete: animateGrid
   });
 }
