@@ -1,6 +1,39 @@
+body {
+  /*font-family: 'Nimbus Mono PS', 'Courier New', monospace;*/
+  font-family: "Elms Sans", sans-serif;
+  text-align: center;
+  background-color: rgb(25, 24, 24);
+  color: rgb(255, 235, 119);
+}
+
 .square {
-  width: 4rem;
-  height: 4rem;
-  background-color: blueviolet;
-  border-radius: 1rem;
+  margin: auto;
+  width: 2rem;
+  height: 2rem;
+  background-color: rgb(0, 221, 255);
+  border-radius: 0.6rem;
+  margin-bottom: 0.1em;
+}
+
+.row {
+  rotate: 90deg;
+  padding: 0em;
+  margin-top: -19.5em;
+}
+
+.squares {
+  margin-top: 15em;
+}
+
+.text-xl {
+  font-size: 1.4em;
+}
+
+.navbar {
+  float: left;
+  margin-left: 5em;
+}
+
+a {
+  color: hotpink;
 }
