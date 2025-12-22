@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../../src/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../../src/subsite.js"></script>
+    <title>SQL-database</title>
+</head>
+<body>
+    <nav class="navbartop">
+      <div>
+        <a href="/">Home</a>
+        <a href="/subsites/cybersec_projects/">CyberSecurity Projects</a>
+        <a href="/subsites/portfoliodev/">Portfolio Development Journey</a>
+        <a href="/subsites/minihtmlcssprojects/">Mini HTML + CSS Projects</a>
+      </div>
+    </nav>
+    <h1 class="pageheader">Building a database with SQL</h1>
+    <p>This was a university course assignment from the University of Jyväskylä where I study computer science and cyber-security. The task was to plan, build and optimize an SQLite-relational database for a subject of my choice. I chose Spotify.<br>In the University of Jyväskylä, the grading system is from 0-5 and from this assignment I got a 5 (proof at the bottom).</p>
+    <h2>Assignment instructions</h2>
+    <div>
+        <p class="projecttext">The practical assignment is one of the assessed components of this course. In the assignment, your task is to design and optimize an SQLite relational database for a domain of your own choosing.<br>You can find the detailed instructions and assessment criteria for the assignment below. Summary of the instructions:</p>
+        <ul class="projecttext">
+            <li>The assignment is graded on a scale of 1-5. The grade is determined based on requirements: the assignment has three requirement levels, and fulfilling all the requirements of a given level qualifies you for the grade corresponding to that level. Partial fulfillment of levels and errors will affect the grade.</li>
+            <li>The assignment is an individual piece of work. However, you may ask for help from other students and from the course instructors.</li>
+        </ul>
+        <p>You can find the full and detailed instructions on the assignment page of the course <a class="text-link" href="https://tim.jyu.fi/view/kurssit/tie/itka2004/course/sections/7/01_harjoitustyo#ItFP2p5WVsu9">here</a>. It is in Finnish but translatable for example with google translate or ChatGPT :)</p>
+    </div>
+    <h2>Task 1: Database Requirement Specification</h2>
+    <div>
+        <p class="projecttext">The first task was to choose the subject and write a database requirement specification for it. The relational database was to be made for a real use. I chose spotify as my subject because I'm very interested in music and it felt like it would be fairly logical to make.<br>Here is my requirement specification:</p>
+        <p style="color: rgb(220, 203, 242);">Spotify<br><br>
+
+        Spotify is a digital music streaming application through which people can listen to music. The goal of the application is to allow people to enjoy music they like, so they must be able to choose what they want to listen to at any given time. Artists must also be able to upload music to the platform for users to listen to. The structure of the application's database should be based on the relationships between users, songs, and playlists.<br><br>
+
+        The database must store user information, artists, songs, albums, and playlists (both public and private).<br><br>
+
+        For users, the database must store the user ID, email address, name, age, and gender. A user can have friends and a listening history that stores the last 20 songs played. A user may own zero or many playlists. A user can listen to one song at a time.<br><br>
+
+        For artists, the database must store the artist ID, name, and their monthly listener count. Artists may have zero or many songs uploaded to Spotify, and they may also have albums.<br><br>
+
+        For songs, the database must store the song ID, name, duration, genre (there may be multiple genres), and release year. A song may have featured artists (artists performing on the song in addition to the main artist). A song has one main artist. A song can belong to at most one album, but it can appear in many playlists. A song can be listened to by zero or many users.<br><br>
+
+        For albums, the database must store the album ID, name, duration, and release year. Albums must contain at least one song and are owned by the performing artist(s).<br><br>
+
+        For playlists, the database must store the playlist ID, name, duration, visibility (public or private), and release year. A playlist must contain at least one song in order to exist. A playlist can be owned by one or many users.</p>
+    </div>
+    <h2>Task 2: Conceptual Modelling</h2>
+    <div>
+        <p>The second task included drawing an Entity-Relationship model according to the requirement specification. Here is the model I made:</p>
+        <img src="../../../media/pictures/SQL-database-project/SQL-database-english.png" alt="Spotify-database" style="width: 80%;">
+    </div>
+    <h2>Task 3: Transformation Into Relation</h2>
+    <p class="projecttext"> To be added soon...</p>
+    <h2>Grading</h2>
+    <div>
+        <p class="projecttext">The grading of my work by the professor</p>
+        <figure>
+            <img src="../../../media/pictures/SQL-database-project/grading.png" alt="Grading" style="width: 70%;">
+            <figcaption>It says my work's grade is 5 and that I have gotten a 100% from all the levels<br>1, 3 and 5. In total there is 1 mistake in my work.</figcaption>
+        </figure>
+        <p class="projecttext">Feedback from the professor:</p>
+        <p class="projecttext" style="color: rgb(220, 203, 242);">Excellent work! My only remarks concern T6 and T7. However, in light of the current requirements, T6 does not actually violate anything, and T7 can be interpreted as a minor clarity issue. See my notes below, especially regarding the Kappale_genret relation. In general, in an ER diagram, multivalued attributes should be transformed directly into 4NF and should not require further corrections. On the other hand, the correction you proposed is a so-called generally “good” practice if the stored data is a classification factor with a limited set of values (e.g. genres, which are numerous in the world but not infinite).<br><br>
+---<br><br>
+
+T6: Good! Based on T4 (and on the domain itself), I could assume that the username uniquely identifies a user, meaning that for User we have
+{ name } → { id, age, gender, email }.
+At least in T4, the name is marked as UNIQUE, so it is automatically identifying. This also makes sense, since a user logs into Spotify using their name (or email, but certainly not their ID).<br>
+
+Similarly, based on T4, for Artist the name uniquely identifies the artist, meaning
+{ name } → { id, listener count }.<br><br>
+
+The same seems to apply to Playlist as well.
+
+Both of these are non-trivial, but fortunately they do not affect normalization, since they are both candidate keys.<br><br>
+
+T7: The correction proposed for the Kappale_genret relation is in itself OK, but perhaps unnecessarily complex. The correction does not actually require a change to the relation; instead, the rows in the database where the genre column contains two different genres should be fixed. That is, in T4 the following:<br><br>
+
+INSERT INTO Kappale_genret
+VALUES 
+       (2, 'Pop, Alternative Hip-Hop'),
+       (3, 'Atmospheric, Synthwave'),
+       (4, 'J-Pop, Electronica');
+<br><br>
+
+should be corrected to:<br><br>
+
+INSERT INTO Kappale_genret
+VALUES 
+       (2, 'Pop'),
+       (2, 'Alternative Hip-Hop'),
+       (3, 'Atmospheric'),
+       (3, 'Synthwave'),
+       (4, 'J-Pop'),
+       (4, 'Electronica');
+<br><br>
+
+This is acceptable, since the primary key of Kappale_genret is { song_id, genre }.</p>
+            <p>The email address of the professors/teachers of this course:<br>itka2004-opet@tim.jyu.fi</p>
+    </div>
+</body>
+</html>

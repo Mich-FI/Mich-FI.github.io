@@ -1,3 +1,5 @@
+/* GENERAL STYLE */
+
 @font-face {
   font-family: "Fira Sans";
   src: url('fonts/fira/eot/FiraSans-Regular.eot');
@@ -30,10 +32,6 @@ h1, h2, h3, h4, h5 {
   font-size: 3em;
 }
 
-.welcometxt {
-  font-size: x-large;
-}
-
 body {
   /*font-family: "Fira Sans", "PT Sans", Calibri, Tahoma, sans-serif;*/
   font-family: 'Nimbus Mono PS', 'Courier New', monospace;
@@ -42,37 +40,23 @@ body {
   color: var(--main-color);
 }
 
+table a{
+  text-decoration: none;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
 .navbartop {
   margin: 1em;
   text-align: center;
-  font-size: larger;
 }
 
 .navbartop div a {
   text-decoration: none;
   display: inline-block;
   padding: 0.5rem 15px;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 500;
-  position: relative;
-}
-
-.navbar {
-  text-align: left;
-  font-size: x-large;
-}
-
-.navbar table {
-  display: flex;
-  border-collapse: separate;
-  border-spacing: 7px;
-}
-
-.navbar a {
-  text-decoration: none;
-  font-size: 1.3rem;
-  font-weight: 500;
-  padding: 0.5rem 0;
   position: relative;
 }
 
@@ -99,10 +83,83 @@ a:hover::after {
   transform: translateX(0);
 }
 
+/* HOME PAGE */
+
+.navbar {
+  margin-top: 5.3em;
+  float: left;
+  text-align: left;
+  font-size: x-large;
+}
+
+.navbar table {
+  display: flex;
+  border-collapse: separate;
+  border-spacing: 7px;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.shapes {
+  float:right;
+}
+
+.triangle { 
+      float: right;
+      position: relative;
+      margin-top: 25em;
+      margin-right: 89.5%;
+      width: 20px;
+  }
+  .triangle>div { 
+      width: 25rem;
+      height: 2px;
+      background: var(--accent-color);
+  }
+  .triangle>div:before {
+      content: " ";
+      display: block;
+      width: 21rem;
+      height: 2px;
+      background: var(--accent-color);
+      -webkit-transform: rotate(56deg);
+      -moz-transform: rotate(56deg);
+      -ms-transform: rotate(56deg);
+      transform: rotate(56deg);
+      position: absolute;
+      top: -190px;
+      right: -488px;
+  }
+  .triangle>div:after {
+      content: " ";
+      display: block;
+      width: 21rem;
+      height: 2px;
+      background: var(--accent-color);
+      -webkit-transform: rotate(-56deg);
+      -moz-transform: rotate(-56deg);
+      -ms-transform: rotate(-56deg);
+      transform: rotate(-56deg);
+      position: absolute;
+      top: -190px;
+      left: -105px;
+  }
+
 /*square animation in the home page*/
 
 .squares {
-  padding-bottom: 10em;
+  float: right;
+  margin-top: -21.4em;
+  padding-bottom: 8em;
+  margin-right: 10em;
+  transform: scale(0.8);
+  border: 2px transparent var(--accent-color);
 }
 
 .row {
@@ -196,15 +253,15 @@ p {
 }
 
 .AItext > * {
-  font-size: 2em;
+  font-size: 1.8em;
   text-align: center;
   margin-right: 1.4em;
 }
 
 .AItext > :last-child {
-  transform: rotatex(180deg) translateY(13px);
+  transform: rotatex(180deg) translateY(7px);
   mask-image: linear-gradient(transparent 30%, var(--accent-color) 90%);
-  filter: blur(2.5px) brightness(1.4);
+  filter: blur(2.3px) brightness(1.4);
   color: var(--accent-color);
 }
 
@@ -226,14 +283,16 @@ p {
 }
 
 .devgif_general {
-  text-align: left;
-  height: 430px;
+  float: left;
   overflow: hidden;
+  height: 200px;
+  width: 550px;
   border: 2px solid var(--main-color);
 }
 
 .devgif_general img {
-  margin: -10px 0px 0px 0px;
+  height: 370px;
+  margin: -100px 0px 0px 0px;
 }
 
 .devgif_firsthome {
@@ -253,8 +312,9 @@ p {
   height: 240px;
 }
 
-.devtable1 {
+.devtable {
   padding: 0;
+  margin: 0;
 }
 
 .images {
@@ -265,4 +325,60 @@ p {
 
 #navbarimg img {
   height: 2.5em;
+}
+
+/* CYBERSEC_PROJECTS PAGE*/
+
+.welcometxt {
+  font-size: x-large;
+}
+
+.projects_table {
+  overflow: hidden;
+}
+
+.project {
+  vertical-align: text-top;
+  width: 30em;
+  overflow: hidden;
+}
+
+.project {
+  border-right: 2px solid var(--accent-color);
+}
+
+.project:last-child{
+  border-right: none;
+}
+
+.projects_table img {
+  width: 80%;
+}
+
+.projecttext {
+  text-align: left;
+}
+
+.projecttext li {
+  padding-bottom: 8px;
+}
+
+/* BUILDING A DATABASE WITH SQL PROJECT PAGE */
+
+.projects_header {
+  text-align: left;
+  margin-left: 1.5em;
+  font-size: 2em;
+}
+
+.text-link {
+  color: var(--accent-color);
+  text-shadow: 0 0 10px;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.text-link::after {
+  background-color: var(--main-color);
 }
