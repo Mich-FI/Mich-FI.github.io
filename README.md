@@ -1,6 +1,6 @@
 # My Portfolio
 ## Hey, glad to see you here!
-My cybersech/tech portfolio is located at:\
+My cybersec/tech portfolio is located at:\
 https://mich-fi.github.io/
 
 The date of starting my portfolio is 22.11.2025.\
