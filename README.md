@@ -39,4 +39,11 @@ I will be updating my portfolio throughout the years so I hope you will check th
 ```
 ## Website Development Journey
 
-23.11.2025
+### 23.11.2025
+- Added a hover feature for links
+
+### 23.11.2025
+The first official day of my portfolio being up
+I tested a lot of different animations and color palettes for fun.
+- Added a navbar on top of the webpage
+- After these changes I still did some more changes to the aesthetic. I changed the main color from pastelle yellow to pastelle blue to get a cold tech vibe.
