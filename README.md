@@ -40,7 +40,7 @@ I will be updating my portfolio throughout the years so I hope you will check th
 ## Website Development Journey
 The full documentation with videos and images you can see on the website under the "Portfolio Development Journey" tab.
 
-### 23.11.2025
+### 22.12.2025
 - Added a hover feature for links
 
 ### 23.11.2025
