@@ -2,15 +2,21 @@ import { animate, createTimeline, utils, svg, splitText, stagger } from 'animejs
 
 //header animation
 animate('.mainheader', {
-  delay: 700,
+  delay: 400,
   opacity: [0,1],
   duration: 4000,
 })
 
 animate('.pageheader', {
-  delay: 400,
+  delay: 300,
   opacity: [0,1],
   duration: 2500,
+})
+
+animate('.AItext', {
+  delay: 1000, 
+  opacity: [0,1],
+  duration: 4000,
 })
 
 // paragraph animation

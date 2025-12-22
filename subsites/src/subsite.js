@@ -1,7 +1,7 @@
 import { animate, createTimeline, utils, svg, splitText, stagger } from 'animejs';
 
 animate('.pageheader', {
-  delay: 400,
+  delay: 300,
   opacity: [0,1],
   duration: 2500,
 })
@@ -32,6 +32,7 @@ function animateHeartGrid() {
 
 animateHeartGrid();
 
+/* Stick animation
 animate('.stick', {
     boxShadow: [
       { to: '0 0 6rem 0.5em blue' },
@@ -46,3 +47,4 @@ animate('.stick', {
     alternate: true,
     duration: 5000,
 })
+*/

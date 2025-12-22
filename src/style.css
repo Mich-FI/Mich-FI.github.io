@@ -8,13 +8,18 @@
 }
 
 :root {
-  --main-color: #53c0ff;
-  --accent-color: #FFF;
+  --main-color: #6ad2ff;
+  --accent-color: #d448e6;
 }
 
 html {
   padding-left: 2em;
   padding-right: 2em;
+}
+
+h1, h2, h3, h4, h5 {
+  color: var(--accent-color);
+  text-shadow: 0 0 20px;
 }
 
 .mainheader {
@@ -44,13 +49,54 @@ body {
 }
 
 .navbartop div a {
+  text-decoration: none;
   display: inline-block;
-  padding: 0 10px;
+  padding: 0.5rem 15px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  position: relative;
 }
 
 .navbar {
   text-align: left;
   font-size: x-large;
+}
+
+.navbar table {
+  display: flex;
+  border-collapse: separate;
+  border-spacing: 7px;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+a {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  transition: width 0.4s ease;
+}
+
+a:hover::after {
+  width: 100%;
+  left: 0;
+  transform: translateX(0);
 }
 
 /*square animation in the home page*/
@@ -105,6 +151,7 @@ body {
 
 /*--------end-here--------*/
 
+/* Sticks for cybersec subsite
 .stick {
   float: left;
   width: 0.5rem;
@@ -118,6 +165,7 @@ body {
   float: right;
   margin-right: 2em;
 }
+*/
 
 /* Cool slider wave for vintage stuff!
 .slider {
@@ -147,19 +195,17 @@ p {
   margin-right: 1.7em;
 }
 
-.AItext {
+.AItext > * {
   font-size: 2em;
   text-align: center;
   margin-right: 1.4em;
 }
 
-a {
-  color: var(--main-color);
-  text-decoration: none;
-}
-
-a:hover {
-  font-size: 25px;
+.AItext > :last-child {
+  transform: rotatex(180deg) translateY(13px);
+  mask-image: linear-gradient(transparent 30%, var(--accent-color) 90%);
+  filter: blur(2.5px) brightness(1.4);
+  color: var(--accent-color);
 }
 
 .animesvg {
@@ -172,10 +218,25 @@ a:hover {
 
 .devtext {
   text-align: left;
-  margin-left: -0.1em;
+  margin-left: 0em;
 }
 
-.devgif {
+#imgwborder img {
+  border: 2px solid var(--main-color);
+}
+
+.devgif_general {
+  text-align: left;
+  height: 430px;
+  overflow: hidden;
+  border: 2px solid var(--main-color);
+}
+
+.devgif_general img {
+  margin: -10px 0px 0px 0px;
+}
+
+.devgif_firsthome {
   float: left;
   margin-right: 1em;
   height: 430px;
@@ -183,14 +244,13 @@ a:hover {
   border: 2px solid var(--main-color);
 }
 
-.devgif img {
+.devgif_firsthome img {
   height: 500px;
-  margin: -5px 0px 0px 0px; 
+  margin: -5px 0px 0px 0px;
 }
 
 .devgifheart img {
   height: 240px;
-  border: 2px solid var(--main-color);
 }
 
 .devtable1 {
