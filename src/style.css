@@ -10,6 +10,9 @@
 }
 
 :root {
+  /*previous colors
+  main: #6ad2ff;
+  accent: #d448e6;*/
   --main-color: #6ad2ff;
   --accent-color: #d448e6;
 }
@@ -24,10 +27,6 @@ h1, h2, h3, h4, h5 {
   text-shadow: 0 0 20px;
 }
 
-.mainheader {
-  font-size: 3em;
-}
-
 .pageheader {
   font-size: 3em;
 }
@@ -40,7 +39,7 @@ body {
   color: var(--main-color);
 }
 
-table a{
+table a {
   text-decoration: none;
   padding: 0.5rem 0;
   position: relative;
@@ -58,6 +57,11 @@ table a{
   font-size: 1.1rem;
   font-weight: 500;
   position: relative;
+}
+
+p {
+  text-align: left;
+  font-size: large;
 }
 
 a {
@@ -84,6 +88,15 @@ a:hover::after {
 }
 
 /* HOME PAGE */
+
+.mainheader {
+  font-size: 3em;
+  color: rgb(225, 126, 255);
+}
+
+.author {
+  text-align: center;
+}
 
 .navbar {
   margin-top: 5.3em;
@@ -239,12 +252,6 @@ a:hover::after {
   border-radius: 0.6rem;
 }
 */
-
-p {
-  text-align: left;
-  font-size: large;
-  margin-left: 2em;
-}
 
 .text-xl {
   font-size: 1.4em;
