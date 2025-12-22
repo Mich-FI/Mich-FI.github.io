@@ -38,7 +38,7 @@ I will be updating my portfolio throughout the years so I hope you will check th
 . . ... . ... . ..- - +## + +#+ # #++ - --+ # ##+ + +++ + +++ + +++ + +-- 
 ```
 ## Website Development Journey
-The documenting with videos and images you can see on the website in the "Portfolio Development Journey" tab.
+The full documentation with videos and images you can see on the website in the "Portfolio Development Journey" tab.
 
 ### 23.11.2025
 - Added a hover feature for links
