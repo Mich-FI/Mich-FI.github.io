@@ -10,6 +10,7 @@ export default defineConfig({
         minihtmlcssprojects: './subsites/minihtmlcssprojects/index.html',
         portfoliodev: './subsites/portfoliodev/index.html',
         tech_projects: './subsites/tech_projects/index.html',
+        sql_project: './subsites/cybersec_projects/SQL-database/index.html',
       },
     },
   },
