@@ -1,4 +1,4 @@
-import { animate, createTimeline, utils, svg, splitText, stagger } from 'animejs';
+import { animate, createTimeline, linear, utils, svg, splitText, stagger } from 'animejs';
 
 //header animation
 animate('.mainheader', {
@@ -13,7 +13,7 @@ animate('.pageheader', {
   duration: 2500,
 })
 
-animate('.AItext', {
+animate('.author', {
   delay: 1000, 
   opacity: [0,1],
   duration: 4000,
@@ -60,10 +60,10 @@ function animateGrid() {
       { to: [0, 1.25] },
       { to: 0 }
     ],
-    boxShadow: [
-      { to: '0 0 2rem 0 blue' },
-      { to: '0 0 2rem 0 blue' }
-    ],
+    /*boxShadow: [
+      { to: '0 0 2rem 0 red' },
+      { to: '0 0 2rem 0 red' }
+    ],*/
     y: 330,
     rotate: 360,
     loop: true,
@@ -86,6 +86,13 @@ animate(svg.createDrawable('.line'), {
   duration: 5000,
   delay: stagger(100),
 });
+
+//animating matrix
+animate('.matrix', {
+  y: '54rem',
+  duration: 40000,
+  modifier: utils.round(0.3),
+})
 
 //cool row disappearing stagger animation
 /*const tl = createTimeline({

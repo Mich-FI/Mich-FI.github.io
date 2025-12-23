@@ -12,9 +12,10 @@
 :root {
   /*previous colors
   main: #6ad2ff;
-  accent: #d448e6;*/
-  --main-color: #6ad2ff;
-  --accent-color: #d448e6;
+  accent: rgb(225, 126, 255);*/
+  --main-color: rgb(255, 126, 126);
+  --accent-color: #ddca8c;
+  --quote-color: #cdc6ff;
 }
 
 html {
@@ -43,6 +44,26 @@ table a {
   text-decoration: none;
   padding: 0.5rem 0;
   position: relative;
+}
+
+.matrix {
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-top: -55em;
+  margin-left: -3em;
+  writing-mode: vertical-lr;
+  position: absolute;
+  text-orientation: upright;
+}
+
+.matrix p {
+  font-size: xx-small;
+  opacity: 50%;
+  color: var(--accent-color);
+  line-height: 2em;
 }
 
 .navbartop {
@@ -90,12 +111,27 @@ a:hover::after {
 /* HOME PAGE */
 
 .mainheader {
+  margin-top: 1em;
   font-size: 3em;
-  color: rgb(225, 126, 255);
 }
 
-.author {
+.author > * {
+  font-size: 1.2em;
   text-align: center;
+  margin-left: 5em;
+  margin-right: 5em;
+}
+
+.author > :last-child {
+  transform: rotatex(180deg) translateY(2px);
+  mask-image: linear-gradient(transparent 30%, var(--accent-color) 90%);
+  filter: blur(1.5px) brightness(1.4);
+  color: var(--accent-color);
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .navbar {
@@ -117,6 +153,21 @@ a:hover::after {
   font-weight: 500;
   padding: 0.5rem 0;
   position: relative;
+}
+
+.devlinkwrapper {
+  position: relative;
+  margin-top: -1.5em;
+  transform: rotate(90deg);
+}
+
+.devlink {
+  top: -33em;
+  text-decoration: none;
+  padding: 0.5rem 15px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  position: absolute;
 }
 
 .shapes {
@@ -180,15 +231,110 @@ a:hover::after {
   margin-top: 0em;
 }
 
+/*old color rgb(0, 221, 255)*/
 .square {
   display: inline-block;
   margin: auto;
   width: 2rem;
   height: 2rem;
-  background-color: rgb(0, 221, 255);
+  background-color: var(--main-color);
   border-radius: 0.6rem;
 }
 /*--------end-here--------*/
+
+.text-xl {
+  font-size: 1.4em;
+  text-align: center;
+  margin-right: 1.7em;
+}
+
+/*.AItext > * {
+  font-size: 1.8em;
+  text-align: center;
+  margin-right: 1.4em;
+}
+
+.AItext > :last-child {
+  transform: rotatex(180deg) translateY(7px);
+  mask-image: linear-gradient(transparent 30%, var(--accent-color) 90%);
+  filter: blur(2.3px) brightness(1.4);
+  color: var(--accent-color);
+}*/
+
+.animesvg {
+  margin-top: 5em;
+}
+
+/* DEVELOPMENT JOURNEY PAGE */
+
+.devheader {
+  text-align: left;
+}
+
+.devtext {
+  text-align: left;
+  margin-left: 0em;
+}
+
+#imgwborder img {
+  border: 2px solid var(--main-color);
+}
+
+.devgif_general {
+  text-align: left;
+}
+
+.devgif_general img {
+  width: 60%;
+  border: 2px solid var(--main-color);
+}
+
+.devgif_hover_feature {
+  float: left;
+  overflow: hidden;
+  height: 200px;
+  width: 550px;
+  border: 2px solid var(--main-color);
+}
+
+.devgif_hover_feature img {
+  height: 370px;
+  margin: -100px 0px 0px 0px;
+}
+
+.devgif_firsthome {
+  float: left;
+  margin-right: 1em;
+  height: 430px;
+  overflow: hidden;
+  border: 2px solid var(--main-color);
+}
+
+.devgif_firsthome img {
+  height: 500px;
+  margin: -5px 0px 0px 0px;
+}
+
+.devgifheart img {
+  height: 240px;
+}
+
+.devtable {
+  padding: 0;
+  margin: 0;
+}
+
+.images {
+  margin-top: 1em;
+  margin-right: 20em;
+  border: 2px solid var(--main-color);
+}
+
+#navbarimg img {
+  height: 2.5em;
+}
+
+/* CYBERSEC_PROJECTS PAGE*/
 
 /*heart animation in the cybersecurity projects page*/
 .heart {
@@ -252,89 +398,6 @@ a:hover::after {
   border-radius: 0.6rem;
 }
 */
-
-.text-xl {
-  font-size: 1.4em;
-  text-align: center;
-  margin-right: 1.7em;
-}
-
-.AItext > * {
-  font-size: 1.8em;
-  text-align: center;
-  margin-right: 1.4em;
-}
-
-.AItext > :last-child {
-  transform: rotatex(180deg) translateY(7px);
-  mask-image: linear-gradient(transparent 30%, var(--accent-color) 90%);
-  filter: blur(2.3px) brightness(1.4);
-  color: var(--accent-color);
-}
-
-.animesvg {
-  margin-top: 5em;
-}
-
-.devheader {
-  text-align: left;
-}
-
-.devtext {
-  text-align: left;
-  margin-left: 0em;
-}
-
-#imgwborder img {
-  border: 2px solid var(--main-color);
-}
-
-.devgif_general {
-  float: left;
-  overflow: hidden;
-  height: 200px;
-  width: 550px;
-  border: 2px solid var(--main-color);
-}
-
-.devgif_general img {
-  height: 370px;
-  margin: -100px 0px 0px 0px;
-}
-
-.devgif_firsthome {
-  float: left;
-  margin-right: 1em;
-  height: 430px;
-  overflow: hidden;
-  border: 2px solid var(--main-color);
-}
-
-.devgif_firsthome img {
-  height: 500px;
-  margin: -5px 0px 0px 0px;
-}
-
-.devgifheart img {
-  height: 240px;
-}
-
-.devtable {
-  padding: 0;
-  margin: 0;
-}
-
-.images {
-  margin-top: 1em;
-  margin-right: 20em;
-  border: 2px solid var(--main-color);
-}
-
-#navbarimg img {
-  height: 2.5em;
-}
-
-/* CYBERSEC_PROJECTS PAGE*/
 
 .welcometxt {
   font-size: x-large;
