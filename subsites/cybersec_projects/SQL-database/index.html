@@ -52,7 +52,43 @@
         <img src="../../../media/pictures/SQL-database-project/SQL-database-english.png" alt="Spotify-database" style="width: 80%;">
     </div>
     <h2>Task 3: Transformation Into Relation</h2>
-    <p class="projecttext"> To be added soon...</p>
+    <p class="projecttext"> The third task required me to transform the ER-model into a relational database equation in the following format:<br>R ({|a|}, b, c)        - Relation R, which has primary key a and attributes b and c.<br>S ({|a, b|}, c)        - Relation S, which has primary keys a and b, and attribute c.<br>Kissa ({|name|}, ikä)  - Relation Kissa (Cat), which has primary key name (name) and attribute ikä (age).</p>
+    <p style="color: var(--quote-color);">User ({|id|}, name, ikä, sukupuoli, email address)  \<br><br>
+
+IsFriends ({|User_id, User_id2|}) -- User can be a friend to another User, 
+siksi kaksi User ID:tä.  \<br>
+IsFriends.user_id -> User.id  \<br>
+IsFriends.user_id2 -> User.id  \<br><br>
+
+Listening history ({|user_id, song_id|})
+Listening history.user_id -> User.id  \<br>
+Listening history.song_id -> Song.id  \<br><br>
+
+OwnsPlaylist ({|user_id, playlist_id|})  \<br>
+OwnsPlaylist.user_id -> User.id  \<br>
+OwnsPlaylist.playlist_id -> Playlist.id  \<br><br>
+
+Artist ({|id|}, name, listener amount)  \<br>
+OwnsAlbum ({|artist_id, album_id|})  \<br>
+OwnsAlbum.artist_id -> Artist.id  \<br>
+OwnsAlbum.album_id -> Album.id  \<br>
+
+Song ({|id|}, artist_id, album_id, name, duration, release year)  \<br>
+Song.artist_id -> Artist.id  \<br>
+Song.album_id -> Album.id  \<br><br>
+
+Song_genres ({|song_id, genre|})  \<br>
+Song_genres.song_id -> Song.id  \<br><br>
+
+Albumi ({|id|}, name, duration, release year)  \<br><br>
+
+Soittolista ({|id|}, name, publicity, release year, duration)  \<br><br>
+
+ExistsSong ({|playlist_id, song_id|})  \<br>
+ExistsSong.playlist_id -> Playlist.id  \<br>
+ExistsSong.song_id -> Song.id  \<br><br>
+
+</p>
     <h2>Grading</h2>
     <div>
         <p class="projecttext">The grading of my work by the professor</p>
