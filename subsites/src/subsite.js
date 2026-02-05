@@ -48,3 +48,9 @@ animate('.stick', {
     duration: 5000,
 })
 */
+
+/*
+Source - https://stackoverflow.com/a/5794241
+Posted by Titus, modified by community. See post 'Timeline' for change history
+Retrieved 2026-02-05, License - CC BY-SA 3.0
+*/

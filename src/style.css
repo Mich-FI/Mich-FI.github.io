@@ -452,3 +452,24 @@ a:hover::after {
 .text-link::after {
   background-color: var(--main-color);
 }
+
+.codebox {
+    /* Below are styles for the codebox (not the code itself) */
+    background-color: #202020;
+    width: 700px;
+    overflow:auto;    
+    padding:10px;
+}
+.code {
+    /* Styles in here affect the text of the codebox */
+    text-align: left;
+    display: block;
+    white-space: pre-wrap;
+    font-size: 1.2em;
+    color: rgb(147, 255, 190);
+    /* You could also put all sorts of styling here, like different font, color, underline, etc. for the code. */
+}
+
+.ordered_text {
+  white-space: pre-wrap;
+}
