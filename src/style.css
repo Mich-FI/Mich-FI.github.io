@@ -473,3 +473,9 @@ a:hover::after {
 .ordered_text {
   white-space: pre-wrap;
 }
+
+.perstate {
+  white-space: pre-wrap;
+  margin-left: 25em;
+  margin-right: 25em;
+}
