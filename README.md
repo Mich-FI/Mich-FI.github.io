@@ -45,6 +45,7 @@ The full documentation with videos and images you can see on the website under t
 
 ### 23.12.2025
 - Made changes to the visual outlook and structure of the site
+  - Tuned the layout of text and visuals
   - Changed the colors of the website to pastelle yellow and red
 
 ### 22.12.2025
