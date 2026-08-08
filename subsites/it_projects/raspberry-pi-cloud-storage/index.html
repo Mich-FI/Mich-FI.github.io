@@ -38,30 +38,31 @@
         <a class="text-link" href="/subsites/it_projects/SQL-database/#sqldatabasetask7">Task 7</a>
     </p>
     
-    <h2 id="sqldatabasetask1">Task 1: Database Requirement Specification</h2>
+    <h2 id="sqldatabasetask1">Step 1: Database Requirement Specification</h2>
     <div>
         <p class="projecttext">The first task was to choose the subject and write a database requirement specification for it. The relational database was to be made for a real use. I chose spotify as my subject because I'm very interested in music and it felt like it would be fairly logical to make.<br>Here is my requirement specification:</p>
         <p style="color: var(--quote-color);">Spotify<br><br>
 
-        Spotify is a digital music streaming application through which people can listen to music. The goal of the application is to allow people to enjoy music they like, so they must be able to choose what they want to listen to at any given time. Artists must also be able to upload music to the platform for users to listen to. The structure of the application's database should be based on the relationships between users, songs, and playlists.<br><br>
-
-        The database must store user information, artists, songs, albums, and playlists (both public and private).<br><br>
-
-        For users, the database must store the user ID, email address, name, age, and gender. A user can have friends and a listening history that stores the last 20 songs played. A user may own zero or many playlists. A user can listen to one song at a time.<br><br>
-
-        For artists, the database must store the artist ID, name, and their monthly listener count. Artists may have zero or many songs uploaded to Spotify, and they may also have albums.<br><br>
-
-        For songs, the database must store the song ID, name, duration, genre (there may be multiple genres), and release year. A song may have featured artists (artists performing on the song in addition to the main artist). A song has one main artist. A song can belong to at most one album, but it can appear in many playlists. A song can be listened to by zero or many users.<br><br>
-
-        For albums, the database must store the album ID, name, duration, and release year. Albums must contain at least one song and are owned by the performing artist(s).<br><br>
-
-        For playlists, the database must store the playlist ID, name, duration, visibility (public or private), and release year. A playlist must contain at least one song in order to exist. A playlist can be owned by one or many users.</p>
     </div>
-    <h2 id="sqldatabasetask2">Task 2: Conceptual Modelling</h2>
+    <h2 id="sqldatabasetask2">Step 2: Conceptual Modelling</h2>
     <div>
         <p>The second task included drawing an Entity-Relationship model according to the requirement specification. Here is the model I made:</p>
         <img src="../../../media/pictures/SQL-database-project/SQL-database-english.png" alt="Spotify-database" style="width: 50%;">
 
     </div>
+
+    <div class="liquid-glass">
+  <div class="glass-text">Home</div>
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <defs>
+    <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008 0.008" numOctaves="2" seed="92" result="noise" />
+      <feGaussianBlur in="noise" stdDeviation="2" result="blurred" />
+      <feDisplacementMap in="SourceGraphic" in2="blurred" scale="79" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </defs>
+</svg>
 </body>
 </html>
