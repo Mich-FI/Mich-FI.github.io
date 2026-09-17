@@ -114,6 +114,10 @@ a:hover::after {
   transform: translateX(0);
 }
 
+.ignore_a::after {
+  content: none;
+}
+
 /* HOME PAGE */
 
 .mainheader {
