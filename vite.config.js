@@ -8,6 +8,7 @@ export default defineConfig({
         main: './index.html',
         it_projects: './subsites/it_projects/index.html',
         miniprojects: './subsites/miniprojects/index.html',
+        snowingscene: './subsites/miniprojects/snowingscene/index.html',
         portfoliodev: './subsites/portfoliodev/index.html',
         tech_projects: './subsites/tech_projects/index.html',
         sql_project: './subsites/it_projects/SQL-database/index.html',
