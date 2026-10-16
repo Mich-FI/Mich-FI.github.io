@@ -1,4 +1,4 @@
-**MOST COMMANDS FROM A ENRIQUE NEYRA'S VIDEO: https://www.youtube.com/watch?v=jOYG10CvZZA\&t=124s**
+**MOST COMMANDS FROM A ENRIQUE NEYRA'S VIDEO: https://www.youtube.com/watch?v=jOYG10CvZZA
 
 
 
