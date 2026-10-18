@@ -84,7 +84,7 @@
       flex-direction: column;
       text-align: center;
       color: rgba(255, 255, 255, 0.92);
-      pointer-events: none;
+      pointer-events: auto;
     }
 
     .content h1 {
@@ -95,6 +95,7 @@
     }
 
     .content p {
+      position: relative;
       margin-top: 16px;
       font-size: clamp(0.8rem, 2vw, 1.1rem);
       letter-spacing: 0.3em;
@@ -107,6 +108,105 @@
         text-shadow: none;
       }
     }
+
+    .target-o {
+      position: relative;
+      display: inline-block;
+    }
+
+    .floating-button {
+        opacity: 0;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-64%, -51%);
+        z-index: 10;
+    
+        width: 24px;
+        height: 24px;
+        padding: 0;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        border: none;
+        border-radius: 50%;
+        background: #8db9ff00;
+        color: white;
+        cursor: pointer;
+
+        font-weight: 400;
+        font-size: 18px;
+        transition: .3s ease-in-out;
+    }
+
+    .floating-button:hover {
+      opacity: 1;
+    }
+
+    /*SLIDER*/
+    .rangeslider {
+        width: 25%;
+        margin: 25px;
+        text-align: center;
+        opacity: 1;
+        transition: .5s ease-in-out;
+    }
+
+    .rangeslider.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .myslider {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 12px;
+        background: #e0e0e0;
+        outline: none;
+        opacity: 1;
+        transition: .3s ease-in-out;
+        border-radius: 10px;
+    }
+
+    .myslider:hover {
+      box-shadow: 0 0 5px #4c90ef;
+    }
+
+    .myslider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        background: #428dd8;
+        cursor: pointer;
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        transition: background .3s ease-in-out;
+    }
+
+    .myslider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        background: #99d0ee;
+        cursor: pointer;
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        transition: background .3s ease-in-out;
+    }
+
+    .myslider::-webkit-slider-thumb:hover {
+        box-shadow: 0 0 5px rgb(117, 159, 243);
+        background: #99d0ee;
+    }
+
+    .myslider::-moz-range-thumb:hover {
+        box-shadow: 0 0 5px rgb(117, 159, 243);
+        background: #99d0ee;
+    }
+
   </style>
 </head>
 
@@ -118,7 +218,19 @@
     <!-- Remove this section if you only want the background -->
     <div class="content">
       <h1>WINTER</h1>
-      <p>A quiet snowfall</p>
+      <p>A quiet sn<span class="target-o">o
+      <button
+        class="floating-button"
+        aria-label="Toggle snowfall speed slider"
+        onclick="hideSlider()"
+        >Ø</button>
+      </span>wfall</p>
+
+      <div class="rangeslider">
+        <input type="range" min="0.1" max="100" 
+          value="10" class="myslider" 
+          id="sliderRange" aria-label="Snowfall speed">
+      </div>
     </div>
   </div>
 
@@ -130,11 +242,23 @@
     let height;
     let snowflakes = [];
     let animationId;
+    let fallspeed = 1;
+
+    const rangeslider = document.getElementById("sliderRange");
+    const output = document.getElementById("demo");
+
+    rangeslider.addEventListener("input", function () {
+      fallspeed = Number(this.value) / 10;
+    });
 
     const SNOW_COUNT = 180;
     const reduceMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
+
+    function hideSlider() {
+      document.querySelector(".rangeslider").classList.toggle("hidden");
+    }
 
     function resizeCanvas() {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -150,7 +274,6 @@
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
       createSnowflakes();
-      drawSnow();
     }
 
     function createSnowflakes() {
@@ -196,9 +319,9 @@
         flake.phase += flake.twinkleSpeed;
 
         if (!reduceMotion) {
-          flake.y += flake.speed;
+          flake.y += flake.speed * fallspeed;
           flake.x +=
-            flake.drift + Math.sin(flake.phase) * 0.25;
+            (flake.drift + Math.sin(flake.phase) * 0.2) * fallspeed;
 
           if (flake.y > height + 5) {
             flake.y = -5;
@@ -213,6 +336,7 @@
       ctx.shadowBlur = 0;
 
       if (!reduceMotion) {
+
         animationId = requestAnimationFrame(drawSnow);
       }
     }
@@ -220,6 +344,7 @@
     window.addEventListener("resize", resizeCanvas);
 
     resizeCanvas();
+    drawSnow();
   </script>
 </body>
 </html>

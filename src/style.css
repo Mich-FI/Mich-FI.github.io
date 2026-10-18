@@ -26,6 +26,26 @@ html {
   padding-right: 2em;
 }
 
+body {
+  /*font-family: "Fira Sans", "PT Sans", Calibri, Tahoma, sans-serif;*/
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+  text-align: center;
+  /*background-color: rgb(25, 24, 24);*/
+  background: transparent;
+  color: var(--main-color);
+}
+
+/*makes sure that the background gradient is consistent across the site*/
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(152deg,rgba(69, 24, 25, 1) 7%, rgba(25, 24, 24, 1) 24%, rgba(25, 24, 24, 1) 67%, rgba(64, 20, 20, 1) 100%);
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
 h1, h2, h3, h4, h5 {
   color: var(--accent-color);
   text-shadow: 0 0 20px;
@@ -33,14 +53,6 @@ h1, h2, h3, h4, h5 {
 
 .pageheader {
   font-size: 3em;
-}
-
-body {
-  /*font-family: "Fira Sans", "PT Sans", Calibri, Tahoma, sans-serif;*/
-  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
-  text-align: center;
-  background-color: rgb(25, 24, 24);
-  color: var(--main-color);
 }
 
 img {
@@ -413,14 +425,21 @@ a:hover::after {
 
 .welcometxt {
   font-size: x-large;
+  display: block;
+  margin-bottom: 0.3em;
 }
 
 .projects_table {
-  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0 12px;
 }
 
-.projects_table h3{
+.projects_table h3 {
   text-shadow: unset;
+}
+
+.projects_table img {
+  width: 80%;
 }
 
 .project {
@@ -428,6 +447,26 @@ a:hover::after {
   width: 30em;
   overflow: hidden; 
   /*border-right: 2px solid var(--accent-color); -- much better looking without the border on the right*/
+}
+
+.miniprojects_table h3{
+  text-shadow: unset;
+}
+
+.miniprojects_table {
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0 18px;
+}
+
+.miniprojects_table img {
+  width: 95%;
+}
+
+.miniproject {
+  vertical-align: text-top;
+  width: 40em;
+  overflow: hidden; 
 }
 
 /*.project a {
@@ -439,10 +478,6 @@ a:hover::after {
 
 .project:last-child{
   /*border-right: none;*/
-}
-
-.projects_table img {
-  width: 80%;
 }
 
 .projecttext {
