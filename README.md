@@ -40,6 +40,9 @@ I will be updating my portfolio throughout the years so I hope you will check th
 ## Website Development Journey
 The full documentation with videos and images you can see on the website under the "Portfolio Development Journey" tab.
 
+### 18.10.2026
+Changed the visual outlook of the site to be more interesting
+
 ### 8.8.2026
 - Changed font to Geist Pixel
 
