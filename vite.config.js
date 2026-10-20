@@ -6,13 +6,13 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: './index.html',
-        it_projects: './subsites/it_projects/index.html',
+        it_portfolio: './subsites/it_portfolio/index.html',
         miniprojects: './subsites/miniprojects/index.html',
         snowingscene: './subsites/miniprojects/snowingscene/index.html',
         portfoliodev: './subsites/portfoliodev/index.html',
         tech_projects: './subsites/tech_projects/index.html',
-        sql_project: './subsites/it_projects/SQL-database/index.html',
-        cloud_storage_project: './subsites/it_projects/raspberry-pi-cloud-storage/index.html',
+        sql_project: './subsites/it_portfolio/SQL-database/index.html',
+        cloud_storage_project: './subsites/it_portfolio/raspberry-pi-cloud-storage/index.html',
         professional_statement: './subsites/professional_statement/index.html',
       },
     },

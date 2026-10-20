@@ -19,6 +19,12 @@ animate('.author', {
   duration: 4000,
 })
 
+animate('.github', {
+  delay: 2000, 
+  opacity: [0,1],
+  duration: 4000,
+})
+
 // paragraph animation
 const[$p] = utils.$('.text-xl');
 const split = splitText('.text-xl', {
