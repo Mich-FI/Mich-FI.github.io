@@ -27,7 +27,7 @@ animate('.github', {
 
 // paragraph animation
 const[$p] = utils.$('.text-xl');
-const split = splitText('.text-xl', {
+const split = splitText($p, {
   words:  { wrap: 'clip' },
 });
 
@@ -83,7 +83,9 @@ function animateGrid() {
   });
 }
 
-animateGrid();
+if ($squares.length) {
+  animateGrid();
+}
 
 //svg text animation
 animate(svg.createDrawable('.line'), {
