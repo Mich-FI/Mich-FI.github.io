@@ -205,10 +205,6 @@ a:hover::after {
 
 .shapes {
   float:right;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -379,10 +375,6 @@ a:hover::after {
 .heart {
   margin-top: 4em;
   padding-bottom: 3em;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
