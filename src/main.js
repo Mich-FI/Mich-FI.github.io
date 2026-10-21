@@ -25,12 +25,6 @@ animate('.github', {
   duration: 4000,
 })
 
-// paragraph animation
-const[$p] = utils.$('.text-xl');
-const split = splitText($p, {
-  words:  { wrap: 'clip' },
-});
-
 split.addEffect((self) => animate(self.words, {
   y: ['100%', '0%'],
   duration: 1250,
