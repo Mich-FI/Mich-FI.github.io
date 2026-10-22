@@ -122,6 +122,41 @@ table a {
   content: none;
 }
 
+#go-back {
+  position: fixed;
+  left: 2em;
+  top: 1.32em;
+  color: var(--accent-color);
+  text-shadow: 0 0 10px;
+  text-decoration: none;
+  cursor: pointer;
+
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#go-back::after {
+  content: none;
+}
+
+#go-forward {
+  position: fixed;
+  left: 5.3em;
+  top: 1.32em;
+  color: var(--accent-color);
+  text-shadow: 0 0 10px;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#go-forward::after {
+  content: none;
+}
+
 p {
   text-align: left;
   font-size: large;
