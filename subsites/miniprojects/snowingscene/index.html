@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../../../src/style.css">
+  <!--<link rel="stylesheet" href="../../../src/style.css">-->
   <title>Blue Winter Snowfall</title>
 
   <style>
@@ -30,6 +30,58 @@
       font-family: Arial, sans-serif;
     }
 
+    #go-back {
+      position: fixed;
+      left: 2em;
+      top: 1.32em;
+      color: #ddca8c;
+      text-shadow: 0 0 10px;
+      text-decoration: none;
+      cursor: pointer;
+
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+
+      z-index: 100;
+      transition: .5s ease-in-out;
+    }
+    
+    #go-back::after {
+      content: none;
+    }
+
+    #go-back.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    #go-forward {
+      position: fixed;
+      left: 5.3em;
+      top: 1.32em;
+      color: #ddca8c;
+      text-shadow: 0 0 10px;
+      text-decoration: none;
+      cursor: pointer;
+
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+
+      z-index: 100;
+      transition: .5s ease-in-out;
+    }
+    
+    #go-forward::after {
+      content: none;
+    }
+
+    #go-forward.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    
     .winter-background {
       position: fixed;
       inset: 0;
@@ -212,8 +264,8 @@
 </head>
 
 <body id="top">
-  <div id="go-forward" onclick="history.forward()" style="z-index: 100;">ᐅ</div>
-  <div id="go-back" onclick="history.back()" style="z-index: 100;">ᐊ</div>
+  <div id="go-forward" onclick="history.forward()">ᐅ</div>
+  <div id="go-back" onclick="history.back()">ᐊ</div>
   <div class="winter-background">
     <div class="glow"></div>
     <canvas id="snow"></canvas>
@@ -225,7 +277,7 @@
       <button
         class="floating-button"
         aria-label="Toggle snowfall speed slider"
-        onclick="hideSlider()"
+        onclick="hideSlider(); hideBack(); hideForward()"
         >Ø</button>
       </span>wfall</p>
 
@@ -248,6 +300,8 @@
     let fallspeed = 1;
 
     const rangeslider = document.getElementById("sliderRange");
+    const goback = document.getElementById("go-back");
+    const goforward = document.getElementById("go-forward");
     const output = document.getElementById("demo");
 
     rangeslider.addEventListener("input", function () {
@@ -261,6 +315,14 @@
 
     function hideSlider() {
       document.querySelector(".rangeslider").classList.toggle("hidden");
+    }
+
+    function hideBack() {
+      goback.classList.toggle("hidden");
+    }
+
+    function hideForward() {
+      goforward.classList.toggle("hidden");
     }
 
     function resizeCanvas() {
