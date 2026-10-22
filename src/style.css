@@ -22,17 +22,21 @@
 }
 
 html {
-  padding-left: 2em;
-  padding-right: 2em;
 }
 
 body {
   /*font-family: "Fira Sans", "PT Sans", Calibri, Tahoma, sans-serif;*/
   font-family: 'Nimbus Mono PS', 'Courier New', monospace;
   text-align: center;
+  margin: 0;
   /*background-color: rgb(25, 24, 24);*/
   background: transparent;
   color: var(--main-color);
+}
+
+main {
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 /*makes sure that the background gradient is consistent across the site*/
@@ -87,8 +91,17 @@ table a {
 }
 
 .navbartop {
-  margin: 1em;
+  position: sticky;
+  top: 0;
+  padding: 14px 0;
   text-align: center;
+  z-index: 2000;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.navbartop.scrolled {
+  background-color: rgb(41, 26, 26);
 }
 
 .navbartop div a {
@@ -97,6 +110,16 @@ table a {
   padding: 0.5rem 15px;
   font-size: 1.1rem;
   position: relative;
+}
+
+.go-up-page {
+  color: var(--accent-color);
+  text-shadow: 0 0 10px;
+  text-decoration: none;
+}
+
+.go-up-page::after {
+  content: none;
 }
 
 p {
@@ -262,6 +285,12 @@ a:hover::after {
   margin-right: 10em;
   transform: scale(0.8);
   border: 2px transparent var(--accent-color);
+  animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0}
+  100% {opacity: 100}
 }
 
 .row {
@@ -329,6 +358,7 @@ a:hover::after {
 }
 
 .devgif_hover_feature {
+  border-radius: 16px;
   float: left;
   overflow: hidden;
   height: 200px;
@@ -342,10 +372,11 @@ a:hover::after {
 }
 
 .devgif_firsthome {
+  border-radius: 16px;
   float: left;
+  overflow: hidden;
   margin-right: 1em;
   height: 430px;
-  overflow: hidden;
   border: 2px solid var(--main-color);
 }
 
@@ -354,8 +385,8 @@ a:hover::after {
   margin: -5px 0px 0px 0px;
 }
 
-.devgifheart img {
-  height: 240px;
+.devgif_heart img {
+  height: 300px;
 }
 
 .devtable {
@@ -446,6 +477,14 @@ a:hover::after {
   font-size: x-large;
   display: block;
   margin-bottom: 0.3em;
+}
+
+.centered_table {
+  color: var(--quote-color);
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  border-spacing: 1.2em 0;
 }
 
 .projects_table {

@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../../../src/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script type="module" src="../../src/subsite.js"></script>
     <title>SQL-database</title>
 </head>
-<body>
+<body id="top">
     <nav class="navbartop">
       <div>
+        <a class="go-up-page" href="./#top">↑</a>
         <a href="/">Home</a>
         <a href="/subsites/it_portfolio/">IT Portfolio</a>
         <a href="/subsites/portfoliodev/">Portfolio Development Journey</a>
         <a href="/subsites/miniprojects/">Mini HTML + CSS + JS Projects</a>
       </div>
     </nav>
+    <main>
     <h1 class="pageheader">Building a database with SQL</h1>
     <p>This was a university course assignment from the University of Jyväskylä where I study computer science and cyber-security. The task was to plan, build and optimize an SQLite-relational database for a subject of my choice. I chose Spotify.<br>In the University of Jyväskylä, the grading system is from 0-5 and from this assignment I got a 5 (proof at the bottom).</p>
     <h2>Assignment instructions</h2>
@@ -608,5 +611,6 @@ VALUES
 This is acceptable, since the primary key of Kappale_genret is { song_id, genre }.</p>
             <p>The email address of the professors/teachers of this course:<br>itka2004-opet@tim.jyu.fi</p>
     </div>
+    </main>
 </body>
 </html>

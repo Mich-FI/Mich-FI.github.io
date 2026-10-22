@@ -1,5 +1,14 @@
 import { animate, createTimeline, utils, svg, splitText, stagger } from 'animejs';
 
+/*navbar scroll animation*/
+$(window).on('scroll', function() {
+  if ($(this).scrollTop() > 50) {
+    $('.navbartop').addClass('scrolled');
+  } else {
+    $('.navbartop').removeClass('scrolled');
+  }
+});
+
 animate('.pageheader', {
   delay: 300,
   opacity: [0,1],
@@ -31,6 +40,8 @@ function animateHeartGrid() {
 }
 
 animateHeartGrid();
+
+
 
 /* Stick animation
 animate('.stick', {

@@ -102,6 +102,15 @@ animate('.matrix', {
   modifier: utils.round(0.3),
 })
 
+/*navbar scroll animation*/
+$(window).on('scroll', function() {
+  if ($(this).scrollTop() > 50) {
+    $('.navbartop').addClass('scrolled');
+  } else {
+    $('.navbartop').removeClass('scrolled');
+  }
+});
+
 //cool row disappearing stagger animation
 /*const tl = createTimeline({
   loop: true,

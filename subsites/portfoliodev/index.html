@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../../src/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Development Journey</title>
 </head>
-<body>
+<body id="top">
     <nav class="navbartop">
       <div>
+        <a class="go-up-page" href="./#top">↑</a>
         <a href="/">Home</a>
         <a href="/subsites/professional_statement/">Professional Statement</a>
         <a href="/subsites/it_portfolio/">IT Portfolio</a>
         <a href="/subsites/miniprojects/">Mini HTML + CSS + JS Projects</a>
       </div>
     </nav>
+    <main>
     <h1 class="pageheader">Portfolio Development Journey</h1>
     <span class="welcometxt">Here you can follow my dev journey from the start.<br>I've made my whole website using HTML, CSS<br>and JS (JavaScript) with animejs API.<br></span>
+    <h2 class="devheader">22.10.2026</h2>
+    <p class="devetext">Added a feature for navbar sticking when scrolling and made structural changes in the site source code</p>
+    <div class="devgif_general">
+      <img src="/media/videos/stuck_navbar.gif" alt="Stuck navbar when scrolling">
+    </div>
     <h2 class="devheader">18.10.2026</h2>
     <p class="devetext">Changed the visual outlook of the site to be more interesting</p>
     <div class="devgif_general">
@@ -30,15 +38,9 @@
     <p class="devetext">I also changed the colors of the website to pastelle yellow and red</p>
     <h2 class="devheader">22.12.2025</h2>
     <p class="devtext">Added a hover feature for links</p>
-    <table class="devtable">
-      <tr>
-        <td>
-          <div class="devgif_hover_feature">
-            <img src="/media/videos/devpage_hover_feature.gif" alt="Hover feature for links.">
-          </div>
-        </td>
-      </tr>
-    </table>
+      <div class="devgif_hover_feature">
+        <img src="/media/videos/devpage_hover_feature.gif" alt="Hover feature for links.">
+      </div>
     <p class="devtext">I fine-tuned the site visually as well and made it more intuitive</p>
     <h2 class="devheader">23.11.2025</h2>
     <p class="devtext"><i>The first official day of my portfolio being up</i></p>
@@ -51,7 +53,7 @@
         </td>
         <td>
           <p>What my website looked like when I launched it. I tested a lot of different animations and color palettes for fun and landed on this one for the beginning. But I knew that at some point I was probably gonna change it.</p>
-          <div class="devgifheart" id="imgwborder">
+          <div class="devgif_heart" id="imgwborder">
             <img src="/media/videos/start_of_devel2.gif" alt="Animated a heart of cybersec projects page">
           </div>
         </td>
@@ -63,5 +65,6 @@
     </div>
     <p class="devtext">After these changes I still did some more changes to the aesthetic. I changed the main color from pastelle yellow to pastelle blue to get a cold tech vibe.</p>
     <script type="module" src="../../src/main.js"></script>
+    </main>
 </body>
 </html>
