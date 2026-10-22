@@ -40,6 +40,9 @@ I will be updating my portfolio throughout the years so I hope you will check th
 ## Website Development Journey
 The full documentation with videos and images you can see on the website under the "Portfolio Development Journey" tab.
 
+### 22.10.2026
+Added a feature for navbar sticking when scrolling and made structural changes in the site source code
+
 ### 18.10.2026
 Changed the visual outlook of the site to be more interesting
 
