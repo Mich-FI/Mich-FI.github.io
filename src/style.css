@@ -394,7 +394,6 @@ a:hover::after {
 
 .devgif_hover_feature {
   border-radius: 16px;
-  float: left;
   overflow: hidden;
   height: 200px;
   width: 550px;
@@ -430,6 +429,7 @@ a:hover::after {
 }
 
 .images {
+  border-radius: 16px;
   margin-top: 1em;
   margin-right: 20em;
   border: 2px solid var(--main-color);
