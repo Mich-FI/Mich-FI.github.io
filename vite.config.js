@@ -12,6 +12,7 @@ export default defineConfig({
         portfoliodev: './subsites/portfoliodev/index.html',
         sql_project: './subsites/it_portfolio/SQL-database/index.html',
         cloud_storage_project: './subsites/it_portfolio/raspberry-pi-cloud-storage/index.html',
+        dvwa_vuln_report: './subsites/it_portfolio/dvwa-vuln-report/index.html',
         professional_statement: './subsites/professional_statement/index.html',
       },
     },
