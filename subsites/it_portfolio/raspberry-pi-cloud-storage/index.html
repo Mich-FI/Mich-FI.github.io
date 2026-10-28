@@ -142,20 +142,36 @@
         <p class="projecttext">
             Since we don't want the SD card to be tied to only this Raspberry Pi (so we can use it in other projects), we will clone the data on another storage device. In my case, it is the 4TB HDD that I have. Regardless of your storage device, you can use <a class="text-link" href="https://rpi-clone.jeffgeerling.com/">this cloning tool modified by Jeff Geerling</a> to achieve this. This tool simply writes all your data from the SD card into whatever other storage device you have connected.
         </p>
-        <p>
+        <p class="projecttext">
             The following command will download the tool to your Pi: <span style="color: var(--quote-color);">curl https://raw.githubusercontent.com/geerlingguy/rpi-clone/master/install | sudo bash</span>
         </p>
         <img src="./photos/memory-and-rpi-clone2.png" alt="Download cloning tool" style="width: 50%;">
-        <p>
+        <p class="projecttext">
             When the downloading is finished, you can run the command to start the cloning: <span style="color: var(--quote-color);">sudo rpi-clone YOUR_DEVICE_NAME_HERE</span>
             <br>
             And to check your device name, run this command: <span style="color: var(--quote-color);">lsblk</span> , and see what your device, that has the correct storage amount is called. Mine was <span style="color: var(--quote-color);">sda</span>.
         </p>
         <img src="./photos/lsblk-and-cloning-sd-card.png" alt="Cloning to the HDD" style="width: 40%;">
+        <p class="projecttext">
+           Now we need to change the boot order so we wouldn't rely on the SD card for anything. This will be done by modifying the Pi config, using the <span style="color: var(--quote-color);">sudo raspi-config</span> command.
+           <br>
+            To change the boot order, we go to <span style="color: var(--quote-color);">6 Advanced Options --> A4 Boot Order --> B2 NVMe/USB</span> and Enter.
+        </p>
+        <img src="./photos/raspi-boot-order-change-4.png" alt="Changing boot order" style="width: 40%;">
+        <p class="projecttext">
+            Then we click finish. And instead of agreeing to reboot, we plug out the power cable from the Pi. This is a good place to also take out your SD card if you want to.
+            <br>
+            Then connect the power cable, and connect to the Pi with SSH again. If this works, you know the cloning process to the storage device worked.
+        </p>
     </div>
-    <h2 id="cloudstoragestep4">Step 4: </h2>
+    <h2 id="cloudstoragestep4">Step 4: Getting Nextcloud to work</h2>
     <div>
-        <p class="projecttext"></p>
+        <p class="projecttext">
+            Firstly, we need install Snap and then install Nextcloud. We do this with by installing snap:
+            <span style="color: var(--quote-color);">sudo apt install snapd -y</span> , and then installing nextcloud:
+            <span style="color: var(--quote-color);">sudo snap install nextcloud</span>
+
+        </p>
     </div>
     <h2 id="cloudstoragestep5">Step 5: </h2>
     <div>
