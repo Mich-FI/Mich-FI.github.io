@@ -167,19 +167,76 @@
     <h2 id="cloudstoragestep4">Step 4: Getting Nextcloud to work</h2>
     <div>
         <p class="projecttext">
-            Firstly, we need install Snap and then install Nextcloud. We do this with by installing snap:
-            <span style="color: var(--quote-color);">sudo apt install snapd -y</span> , and then installing nextcloud:
+            Firstly, we need to install Snap package manager in order to install Nextcloud. We do this with the following commands:
+            <span style="color: var(--quote-color);">sudo apt install snapd -y</span> ,
             <span style="color: var(--quote-color);">sudo snap install nextcloud</span>
-
         </p>
+        <img src="./photos/install-snapd.png" alt="Installing snap" style="width: 40%;"> <br>
+        <img src="./photos/install-nextcloud.png" alt="Installing Nextcloud" style="width: 40%;">
+        <p class="projecttext">
+            We can then use the command <span style="color: var(--quote-color);">sudo snap services</span> to check if nextcloud services are active (nextcloud.logrotate can be inactive since it is timer-activated).
+            <br>
+            To access the web dashboard, we'll have to know the IP address of our Pi, which can be done with <span style="color: var(--quote-color);">ifconfig</span>.
+        </p>
+        <img src="./photos/find-ip.png" alt="Finding IP" style="width: 40%;">
+        <p class="projecttext">
+            Copy the first IP address of wlan0 IP and paste it in the URL section of your browser. You'll be directed to the initial setup page for your Nextcloud account.
+        </p>
+        <img src="./photos/setup-nextcloud-account.png" alt="Setting up Nextcloud account" style="width: 40%;">
+        <p class="projecttext">
+            Type in any username for the admin and be sure to create a very secure password since your files will be stored here. I personally also changed the data folder to a custom one but you can go with the default, that ensures less risk of something going wrong.
+            <br><br>
+            Now we can sit back and relax for a little bit while Nextcloud is setting up everything for us.
+            <br>
+            After it is done, it will recommend you apps to install. You can skip this step or install any of the apps you want. Now at the top of the page you can click on files, and there you go! Nextcloud is fully operational :D
+        </p>
+        <img src="./photos/nextcloud-working.png" alt="Nextcloud up and running" style="width: 40%;">
     </div>
-    <h2 id="cloudstoragestep5">Step 5: </h2>
+    <h2 id="cloudstoragestep5">Step 5: Installing and running Tailscale</h2>
     <div>
-        <p class="projecttext"></p>
+        <p class="projecttext">
+            To go a step further, it is convenient to be able to upload and download files to and from your Nextcloud from anywhere on the internet <span style="font-weight: 800; color: rgb(189, 126, 248);"> safely</span>.
+            <br>Tailscale is a great way to do this. It is basically a VPN that uses <a class="text-link" href="https://en.wikipedia.org/wiki/Zero_trust_architecture">zero trust architecture</a>. We're going to install it by going to their <a class="text-link" href="https://tailscale.com/download">website download section</a>, pressing on Linux and pasting and running the command in the terminal.
+        </p>
+        <img src="./photos/download-tailscale-website.png" alt="Tailscale website" style="width: 40%;">
+        <br>
+        <img src="./photos/tailscale-download-pi.png" alt="Downlaod Tailscale on Pi" style="width: 40%;">
+        <p class="projecttext">
+            To run the Tailscale process, we will use <span style="color: var(--quote-color);">sudo tailscale up</span> , and afterwards we'll go to the website shown in terminal to authenticate our device.
+        </p>
+        <img src="./photos/tailscale-up.png" alt="Run Tailscale process" style="width: 40%;">
+        <p class="projecttext">
+            On the website, you can choose the preferred sign-in method. I chose GitHub. After signing in, we click "visit the console".
+        </p>
+        <img src="./photos/tailscale-dashboard.png" alt="Tailscale dashboard" style="width: 40%;">
     </div>
-    <h2 id="cloudstoragestep6">Step 6: </h2>
+    <h2 id="cloudstoragestep6">Step 6: Final commands</h2>
     <div>
-        <p class="projecttext"></p>
+        <p class="projecttext">
+            The next commands are the last ones we need to do on the Pi and these are straight from the YouTube video referred to at the top of this page. Run the following commands on the Pi:
+        </p>
+        <table class="centered_table">
+            <tr>       
+                <td style="font-weight: 800;">Command</td>
+                <td style="font-weight: 800;">Meaning</td>
+            </tr>
+            <tr>
+                <td>sudo snap run nextcloud.occ config:system:set trusted_proxies 0 --value=127.0.0.1</td>
+                <td style="border-bottom: 1pt solid var(--main-color);">Trust a proxy: Run Nextcloud's command-line aministrator tool (occ) and <br>set a value (127.0.0.1; IPv4 loopback address meaning this same machine)<br>in the system config in trusted_proxies list as the first entry (index 0).</td>
+            </tr>
+            <tr>
+                <td>sudo snap run nextcloud.occ config:system:set overwriteprotocol --value=https</td>
+                <td style="border-bottom: 1pt solid var(--main-color);">Set external protocol as HTTPS: run the same occ tool and set the value <br>as https in the system config in the overwriteprotocol spot; this prevents <br>any non secure http links being generated.</td>
+            </tr>
+            <tr>
+                <td>sudo snap run nextcloud.occ config:system:set trusted_domains 1 --value="YOUR-TAILSCALE-DNS-NAME"</td>
+                <td style="border-bottom: 1pt solid var(--main-color);"></td>
+            </tr>
+            <tr>
+                <td>sudo tailscale serve --bg --https=443 http://localhost:80</td>
+                <td></td>
+            </tr>
+        </table>
     </div>
     </main>
 </body>
