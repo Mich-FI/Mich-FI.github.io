@@ -226,17 +226,30 @@
             </tr>
             <tr>
                 <td>sudo snap run nextcloud.occ config:system:set overwriteprotocol --value=https</td>
-                <td style="border-bottom: 1pt solid var(--main-color);">Set external protocol as HTTPS: run the same occ tool and set the value <br>as https in the system config in the overwriteprotocol spot; this prevents <br>any non secure http links being generated.</td>
+                <td style="border-bottom: 1pt solid var(--main-color);">Set external protocol as HTTPS: Run the same occ tool and set the value <br>as https in the system config in the overwriteprotocol spot; this prevents <br>any non secure http links being generated.</td>
             </tr>
             <tr>
                 <td>sudo snap run nextcloud.occ config:system:set trusted_domains 1 --value="YOUR-TAILSCALE-DNS-NAME"</td>
-                <td style="border-bottom: 1pt solid var(--main-color);"></td>
+                <td style="border-bottom: 1pt solid var(--main-color);">Trust your Tailscale DNS domain: Same as the first command but the set <br>value is your Pi's Tailscale DNS name (it ends with .net) and you'll put it <br>as the second entry (index 1).</td>
             </tr>
             <tr>
                 <td>sudo tailscale serve --bg --https=443 http://localhost:80</td>
-                <td></td>
+                <td>Turn on HTTPS tunnel: This starts the proxying service; configure Tailscale <br>to serve a local web servcice to devices in your tailnet and run the serve <br>configuration in the background. Accept HTTPS connections on port 443 and <br>forward incoming requests to the web service on this machine port 80.</td>
             </tr>
         </table>
+    </div>
+    <h2 id="cloudstoragestep6">Step 7: Access your storage on any device</h2>
+    <div>
+        <p class="projecttext">
+            We can access the Nextcloud storage on any device very swiftly by just downloading Tailscale and Nextcloud on it. I decided try to access the files on my iPhone. <br>What I did was download the applications from the App store and login to Tailscale with the same account as on my Pi (which was my GitHub account) and login with the credentials I set up to the Nextcloud account.
+        </p>
+        <img src="./photos/IMG_4806.png" alt="Tailscale working on phone" style="width: 20%;">
+        <img src="./photos/IMG_2708.PNG" alt="Nextcloud working on phone" style="width: 20%;">
+        <p class="projecttext">
+            You can do the same thing with any Linux, Windows, Mac, iPhone or Android device to access your files from anywhere at any time! Of course you'll have to have the Pi powered on all the time but referring to <a class="text-link" href="https://raspberry.tips/en/raspberrypi-tutorials/raspberry-pi-power-consumption-update-2026-all-models-compared">this article</a> the cost of your electricity bill should not get much higher at all in a year.
+            <br><br>
+            Now, if you've followed along, congratulations on making your first cloud storage without any subscribtions! And even if you didn't follow along, thank you for reading my writeup! The updating cabapilities are endless from here on and we could use a totally different ways to make our own cloud storage system which will have for example better backuping options. But that will come a bit later. Thank you and have a great day!
+        </p>
     </div>
     </main>
 </body>
